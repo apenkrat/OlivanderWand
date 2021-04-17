@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kSp-2X-vBb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Olivander's Wand-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="The_Olivander_s_Wand" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ets-FH-7jg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="oGX-oM-QM8" rowHeight="60" style="IBUITableViewCellStyleDefault" id="QcA-Ji-BGx">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QcA-Ji-BGx" id="tpM-gN-DNo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oGX-oM-QM8">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ESg-9s-tHh" kind="show" identifier="ShowDetail" id="Isw-BP-2oK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ets-FH-7jg" secondAttribute="trailing" id="0hX-cE-wks"/>
+                            <constraint firstItem="Ets-FH-7jg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cDy-pt-guO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ets-FH-7jg" secondAttribute="bottom" id="fv1-3e-AM5"/>
+                            <constraint firstItem="Ets-FH-7jg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sbI-DA-D5l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Olivander's Wand" id="Mp6-0a-9DG">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Dca-ZT-Buv"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Ets-FH-7jg" id="glO-4Y-oRY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071.2" y="106.59670164917542"/>
+        </scene>
+        <!--Spell Detail View Controller-->
+        <scene sceneID="H5f-fb-AhX">
+            <objects>
+                <viewController id="ESg-9s-tHh" customClass="SpellDetailViewController" customModule="The_Olivander_s_Wand" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="faP-QA-uUg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spell Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZu-VD-12U">
+                                <rect key="frame" x="20" y="113" width="117" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="24"/>
+                                <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Here:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpf-27-Y3Z">
+                                <rect key="frame" x="15" y="161" width="384" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spell Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXR-AV-Mkr">
+                                <rect key="frame" x="15" y="214" width="171.5" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="24"/>
+                                <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQX-7G-pCi">
+                                <rect key="frame" x="15" y="272" width="384" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ukj-kX-LvZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="TXR-AV-Mkr" firstAttribute="leading" secondItem="ukj-kX-LvZ" secondAttribute="leading" constant="15" id="3OQ-qs-RiH"/>
+                            <constraint firstItem="gQX-7G-pCi" firstAttribute="top" secondItem="TXR-AV-Mkr" secondAttribute="bottom" constant="25" id="PEy-kz-ToV"/>
+                            <constraint firstItem="ukj-kX-LvZ" firstAttribute="trailing" secondItem="gQX-7G-pCi" secondAttribute="trailing" constant="15" id="PhG-Jm-wrE"/>
+                            <constraint firstItem="OZu-VD-12U" firstAttribute="leading" secondItem="ukj-kX-LvZ" secondAttribute="leading" constant="20" id="ZdQ-Dc-OP2"/>
+                            <constraint firstItem="ukj-kX-LvZ" firstAttribute="trailing" secondItem="vpf-27-Y3Z" secondAttribute="trailing" constant="15" id="Zk0-q5-qSO"/>
+                            <constraint firstItem="vpf-27-Y3Z" firstAttribute="leading" secondItem="ukj-kX-LvZ" secondAttribute="leading" constant="15" id="aVa-bA-xeI"/>
+                            <constraint firstItem="TXR-AV-Mkr" firstAttribute="top" secondItem="vpf-27-Y3Z" secondAttribute="bottom" constant="20" id="gvL-Ts-piY"/>
+                            <constraint firstItem="vpf-27-Y3Z" firstAttribute="top" secondItem="OZu-VD-12U" secondAttribute="bottom" constant="15" id="nKE-PX-jtK"/>
+                            <constraint firstItem="gQX-7G-pCi" firstAttribute="leading" secondItem="ukj-kX-LvZ" secondAttribute="leading" constant="15" id="t9Q-EV-8Fc"/>
+                            <constraint firstItem="OZu-VD-12U" firstAttribute="top" secondItem="ukj-kX-LvZ" secondAttribute="top" constant="25" id="yx6-19-3eY"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6BM-Lh-S1U" appends="YES" id="qk0-aM-JlO"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="6or-Dx-gCf"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="gQX-7G-pCi" id="cOH-ih-gEe"/>
+                        <outlet property="nameLabel" destination="vpf-27-Y3Z" id="hrA-3t-Q2S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B6a-gd-mG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="6BM-Lh-S1U">
+                    <connections>
+                        <action selector="swipeGesture:" destination="ESg-9s-tHh" id="5ai-vR-niI"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1972" y="109.29535232383809"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NPs-BW-LwX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kSp-2X-vBb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="9VK-GK-BZp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xdd-ni-Oy5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6X9-97-0RD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="106.59670164917542"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
