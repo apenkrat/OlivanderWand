@@ -17,7 +17,7 @@ class Spells {
     
     var spellArray: [SpellData] = []
     var url = "https://potterspells.herokuapp.com/api/v1/spells"
-    
+    //changes for json
     func getData(completed: @escaping ()->()) {
         let urlString = url
         print("Accessing URL\(urlString)")
