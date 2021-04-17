@@ -15,6 +15,8 @@ class Spells {
         
     }
     
+    //HELLLOOOooooooOOoooooo
+    
     var spellArray: [SpellData] = []
     var url = "https://potterspells.herokuapp.com/api/v1/spells"
     //changes for json
