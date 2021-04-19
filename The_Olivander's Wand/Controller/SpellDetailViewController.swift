@@ -2,8 +2,8 @@
 //  SpellDetailViewController.swift
 //  The_Olivander's Wand
 //
-//  Created by Harsh Verma on 19/05/20.
-//  Copyright © 2020 Harsh Verma. All rights reserved.
+//  Created by Alex Penkrat on 04/17/2021.
+//  Copyright © 2021 Alex Penkrat. All rights reserved.
 //
 
 import UIKit
@@ -30,13 +30,10 @@ class SpellDetailViewController: UIViewController {
         descriptionX = descriptionLabel.frame.origin.x
         nameLabel.frame.origin.x = self.view.frame.width
         descriptionLabel.frame.origin.x = self.view.frame.width
-        
         updateUserInterFace()
-        
     }
     
     func updateUserInterFace() {
-        
         nameLabel.text = spellData.name
         descriptionLabel.text = spellData.description
         UIView.animate(withDuration: 0.5, animations: {self.nameLabel.frame.origin.x = self.nameX})
@@ -45,20 +42,16 @@ class SpellDetailViewController: UIViewController {
     }
     
     func playSound(name: String) {
-        
         if let sound = NSDataAsset(name: name) {
-            
             do {
                 sudioPlayer = try AVAudioPlayer(data: sound.data)
                 sudioPlayer.play()
             }catch {
                 print(error.localizedDescription)
             }
-            
         } else {
             print("Error:- Cant read from assets\(name)")
         }
-        
     }
     
     func castSpell() {
@@ -66,7 +59,6 @@ class SpellDetailViewController: UIViewController {
         UIView.animate(withDuration: 0.1, delay: 1.0, animations: {self.view.backgroundColor = UIColor.red}) { (done) in
             self.view.backgroundColor = .white
         }
-        
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
@@ -74,7 +66,6 @@ class SpellDetailViewController: UIViewController {
     }
     
     @IBAction func swipeGesture(_ sender: UISwipeGestureRecognizer) {
-        
         castSpell()
     }
 }
