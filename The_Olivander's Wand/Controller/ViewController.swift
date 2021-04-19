@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var audioPlayer: AVAudioPlayer!
 
     @IBOutlet weak var tableView: UITableView!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,13 +37,13 @@ class ViewController: UIViewController {
             self.animateTable()
         }
     }
-    //Important to know for capturing the information from the list to pass to the detail view controller. makes ure ShowDetail is correct. it will not flag error.
+    //Important to know for capturing the information from the list to pass to the detail view controller. makes sure ShowDetail is in the segue identifier. it will not flag error.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        //technically you do not need te if since its the only segue but a good practice. in case you have multiple situations occuring.
         if segue.identifier == "ShowDetail" {
             //As is castign it to a specific class.
             let destination = segue.destination as! SpellDetailViewController
-            //tells you what row was pressed
+            //tells you what row was pressed and passd into the spells array so you can access it for the detail view. 
             let selected = tableView.indexPathForSelectedRow!
             destination.spellData = spells.spellArray[selected.row]
         }
@@ -89,7 +90,7 @@ class ViewController: UIViewController {
       }
 }
 
-//alwasy seperate to be able to reuse.
+//always seperate to be able to code specific delegate data source properties.
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return spells.spellArray.count

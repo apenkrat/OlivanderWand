@@ -60,11 +60,9 @@ class SpellDetailViewController: UIViewController {
             self.view.backgroundColor = .white
         }
     }
-    
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         castSpell()
     }
-    
     @IBAction func swipeGesture(_ sender: UISwipeGestureRecognizer) {
         castSpell()
     }
